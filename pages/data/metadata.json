@@ -1,0 +1,21 @@
+{
+  "title": "MicroBin",
+  "url": "https://MicroBin.eu/",
+  "language": "en",
+  "description": "Description",
+  "feed": {
+    "subtitle": "Description",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://MicroBin.eu/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://MicroBin.eu/feed/feed.json"
+  },
+  "author": {
+    "name": "MicroBin",
+    "email": "daniel.szabo99@outlook.com",
+    "url": "https://MicroBin.eu/"
+  }
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or metadata.title }}</title>
+  <meta name="description" content="{{ description or metadata.description }}">
+  <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+  <!-- GoatCounter user counter, a fellow FOSS project -->
+  <script data-goatcounter="https://9904262.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+  <!-- BootStrap 5.0.1 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <!-- BootStrap 5.0.1 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <!-- BootStrap Icons 1.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/code.css' | url }}">
+</head>
+<body >
+<nav class="navbar navbar-expand-lg  border-bottom navbar-light bg-white ">
+  <div class="container-fluid">
+    <a href="/">
+    <img class="navbar-logo me-5" style="height: 2em;" src="/assets/img/logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+    {# <b class="navbar-title">MicroBin</b> #}
+    <div class="navbar-nav">
+      {%- for entry in collections.all | eleventyNavigation %}
+      <a class="nav-link" href="{{ entry.url | url }}">{{ entry.title }}</a>
+      {%- endfor %}
+    </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container-sm g-0 p-3" style="max-width: 900px">
+    <main{% if templateClass %} class="{{ templateClass }}" {% endif %}>
+      {{ content | safe }}
+      </main>
+  </div>
+  <hr>
+  <p class="small text-muted text-center m-3">
+    Proudly made and hosted in the EU. <img height=20 src="/assets/img/eu.svg"> <i>Let's keep the Web compact, accessible and humane! </i>
+    © Dániel Szabó 2022
+    <br>
+    MicroBin.eu, its contents and the MicroBin server are licensed under <a href="https://opensource.org/licenses/BSD-3-Clause"> the BSD 3-Clause License</a>.
+    </p>
+</div>
+</div>
+</body>
+
+</html>
