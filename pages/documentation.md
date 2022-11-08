@@ -12,30 +12,19 @@ eleventyNavigation:
 
 MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application. It is very easy to set up and use, and will only require a few megabytes of memory and disk storage. It takes only a couple minutes to set it up, why not give it a try now?
 
-Install it from Cargo:
-
-`cargo install microbin`
-
-And run with your custom configuration:
-
-`microbin --public-path https://myserver.com --port 8080 --highlightsyntax --editable`
-
 ### Features
 - Is very small
+- Entirely self-contained executable, MicroBin is a single file!
 - Animal names instead of random numbers for pasta identifiers (64 animals)
 - File uploads (eg. server.com/file/pig-dog-cat)
-- Raw pasta text (eg. server.com/raw/pig-dog-cat)
+- Raw text serving (eg. server.com/raw/pig-dog-cat)
 - URL shortening and redirection
+- QR code support
 - Very simple database (JSON + files) for portability, easy backups and integration
 - Listing and manually removing pastas (/pastalist)
-- Private and public pastas
-- Editable and final pastas
-- Never expiring pastas
-- Automatically expiring pastas
+- Private and public, editable and final, automatically and never expiring pastas
 - Syntax highlighting
-- Entirely self-contained executable, MicroBin is a single file!
-- Automatic dark mode (follows system preferences)
-- Very little CSS and JS (see [water.css](https://github.com/kognise/water.css))
+- Automatic dark mode and custom styling support with very little CSS and only vanilla JS (see [water.css](https://github.com/kognise/water.css))
 - Most of the above can be toggled on and off!
 
 ### What is a "pasta" anyway?
@@ -119,6 +108,29 @@ Require username for HTTP Basic Authentication when visiting the service. If `--
 
 Require password for HTTP Basic Authentication when visiting the service. Will not have any affect unless `--auth-username` is also set. If `--auth-username` is set but `--auth-password ` is not, just leave the password field empty when logging in. You can also just go to https://username:password@yourserver.net or https://username@yourserver.net if password is not set instead of typing into the password prompt.
 
+### --custom-css [CSS_URL]
+
+Replaced the built-in water.css stylesheet with the URL you provide.
+
+### --default-expiry [BURN_AFTER]
+
+Sets the default burn after setting on the main screen.
+
+Default value: `0`
+
+Available expiration options:
+  `1`, `10`, `100`, `1000`, `10000`, `0` (= no limit)
+
+
+### --default-expiry [EXPIRY]
+
+Sets the default expiry time setting on the main screen.
+
+Default value: `24hour`
+
+Available expiration options:
+`1min`, `10min`, `1hour`, `24hour`, `1week`, `never`
+
 ### --editable
 
 Enables editable pastas. You will still be able to make finalised pastas but there will be an extra checkbox to make your new pasta editable from the pasta list or the pasta view page.
@@ -126,6 +138,18 @@ Enables editable pastas. You will still be able to make finalised pastas but the
 ### --footer-text [TEXT]
 
 Replaces the default footer text with your own. If you want to hide the footer, use --hide-footer instead.
+
+### --gc-days [DAYS]
+
+Sets the garbage collector time limit. Pastas not accessed for N days are removed even if they are set to never expire.
+
+Default value: `90`
+
+To turn off GC: `0`
+
+### --hash-ids
+
+Use short hash strings in the URLs instead of animal names to make URLs shorter. Does not change the underlying data stored, just how pastas are recalled.
 
 ### -h, --help
 
@@ -143,6 +167,14 @@ Hides the navigation bar on every page.
 
 Hides the MicroBin logo from the navigation bar on every page.
 
+### --no-eternal-pasta
+
+Disables "Never" expiry settings for pastas.
+
+### --no-file-upload
+
+Disables and hides the file upload option in the UI.
+
 ### --no-listing
 
 Disables the /pastalist endpoint, essentially making all pastas private.
@@ -153,14 +185,14 @@ Enables syntax highlighting support. When creating a new pasta, a new dropdown s
 
 ### -p, --port [PORT]
 
-Default value: 8080
+Default value: `8080`
 
 Sets the port for the server will be listening on.
 
 
 ### -b, --bind [ADDRESS]
 
-Default value: 0.0.0.0
+Default value: `0.0.0.0`
 
 Sets the bind address for the server will be listening on. Both ipv4 and ipv6 are supported.
 
@@ -182,7 +214,7 @@ Replaces "MicroBin" with your title of choice in the navigation bar.
 
 ### -t, --threads [THREADS]
 
-Default value: 1
+Default value: `1`
 
 Number of workers MicroBin is allowed to have. Increase this to the number of CPU cores you have if you want to go beast mode, but for personal use one worker is enough.
 
@@ -201,6 +233,6 @@ Add the given public path prefix to all urls.
 This allows you to host MicroBin behind a reverse proxy on a subpath.
 Note that MicroBin itself still expects all routes to be as without this option, and thus is unsuited if you are running MicroBin directly.
 
-### --no-file-upload
+### -qr
 
-Disables and hides the file upload option in the UI.
+Enables generating QR codes for pastas. Requires --public-path to be set.

@@ -2,48 +2,41 @@
 layout: layouts/home.njk
 title: Roadmap
 templateClass: home
-# eleventyNavigation:
-#   key: Roadmap
-#   order: 4
+eleventyNavigation:
+  key: Roadmap
+  order: 5
 ---
 
 # Roadmap
 
-## Far future
+
+## 8th November 2022 - v1.2 (Current)
+
+[v1.2.0 Announcement and Changelog](/v1.2.0)
+
+## Future
 
 - Desktop application and tools
 - Configuration generator website
-
-## Early 2023 - v1.4
-
 - SQLite support
 - Rate, file size etc. limiting
 - Public MicroBin server
-
-## End of 2022 - v1.3
-
 - Password protected, encrypted pastas
 - More sophisticated authentication replacing basic HTTP auth
 
-## November 2022 - v1.2 (Current)
+## Early versions
 
-- QR code support
-- Deletion by read count
-- Custom styling
-- Created MicroBin.eu website
-- Hash IDs
-
-## August 2022 - v1.1
+#### August 2022 - v1.1
 
 - Docker support
 - More customisation
 - Syntax highlighting
 
-## June 2022 - v1.0
+#### June 2022 - v1.0
 
 - File upload support
 - URL redirection support
 
-## April 2022 - Initial Commit
+#### April 2022 - Initial Commit
 
 - Wrote a minimal pastebin in Rust because all the other options were unnecessarily complicated to self-host, looked clunky and lacked a bunch of useful features.

@@ -4,7 +4,7 @@ title: Donate ❤️
 templateClass: home
 eleventyNavigation:
   key: Donate ❤️
-  order: 4
+  order: 6
 ---
 
 # Donate
