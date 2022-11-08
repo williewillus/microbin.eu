@@ -2,9 +2,9 @@
   "title": "MicroBin",
   "url": "https://MicroBin.eu/",
   "language": "en",
-  "description": "Description",
+  "description": "MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application. Imagine cloud storage, but simpler, and with cool features like URL redirection, automatic file expiry and raw file serving support.",
   "feed": {
-    "subtitle": "Description",
+    "subtitle": "MicroBin is a super tiny, feature rich, configurable, self-contained and self-hosted paste bin web application. Imagine cloud storage, but simpler, and with cool features like URL redirection, automatic file expiry and raw file serving support.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://MicroBin.eu/"

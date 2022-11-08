@@ -19,7 +19,7 @@ permalink: /
 Where to next?
  <a href="/screenshots" class="btn btn-sm btn-light  mb-1">Screenshots</a>,
   <a href="/quickstart" class="btn btn-sm btn-light mb-1">Self-hosting MicroBin</a>
-  or <a href="https://github.com/szabodanika/microbin" class="btn btn-sm btn-light">Fork MicroBin</a>!
+  or <a href="https://github.com/szabodanika/microbin" class="btn btn-sm btn-light">GitHub Repository</a>!
 </div>
 
 <div class="row mt-5">

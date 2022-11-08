@@ -233,6 +233,6 @@ Add the given public path prefix to all urls.
 This allows you to host MicroBin behind a reverse proxy on a subpath.
 Note that MicroBin itself still expects all routes to be as without this option, and thus is unsuited if you are running MicroBin directly.
 
-### -qr
+### --qr
 
 Enables generating QR codes for pastas. Requires --public-path to be set.
